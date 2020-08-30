@@ -1,0 +1,19 @@
+package migrations
+
+import "database/sql"
+
+func init() {
+	migrator.AddMigration(&Migration{
+		Version: "{{.Version}}",
+		Up:      mig_{{.Version}}_{{.Name}}_up,
+		Down:    mig_{{.Version}}_{{.Name}}_down,
+	})
+}
+
+func mig_{{.Version}}_{{.Name}}_up(tx *sql.Tx) error {
+	return nil
+}
+
+func mig_{{.Version}}_{{.Name}}_down(tx *sql.Tx) error {
+	return nil
+}
